@@ -1,0 +1,82 @@
+2014/08/08 14:51:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "GII".' in /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('GII')
+#1 /home/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/sites/test21/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=GII
+---
+2014/08/08 14:51:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#1 /home/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/sites/test21/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=gii
+---
+2014/08/08 14:52:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#1 /home/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/sites/test21/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=gii
+---
+2014/08/08 15:07:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "gii".' in /home/sites/yii-1.1.14.f0fee9/framework/web/CController.php:483
+Stack trace:
+#0 /home/sites/yii-1.1.14.f0fee9/framework/web/CController.php(270): CController->missingAction('gii')
+#1 /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('gii')
+#2 /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('site/gii')
+#3 /home/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/sites/test21/web/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/gii
+---
+2014/08/09 12:12:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users".' in /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('users')
+#1 /home/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/sites/test21/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=users
+---
+2014/08/09 12:12:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tbluser".' in /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('tbluser')
+#1 /home/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/sites/test21/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=tbluser
+---
+2014/08/09 12:12:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tblusers".' in /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('tblusers')
+#1 /home/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/sites/test21/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=tblusers
+---
+2014/08/09 12:12:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tbluser".' in /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('tbluser')
+#1 /home/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/sites/test21/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=tbluser
+---
+2014/08/09 12:13:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tbl_user".' in /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('tbl_user')
+#1 /home/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/sites/test21/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=tbl_user
+---
+2014/08/09 12:13:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user')
+#1 /home/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/sites/test21/web/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=user
+---

@@ -1,0 +1,16 @@
+.report{
+width: 40%;
+margin: 0, auto;
+}
+
+.report li{
+list-style-type: none;
+float: left;
+margin-left:10%;
+width:40%;
+}
+
+.salesHeading{
+font-size:14px;
+}
+
