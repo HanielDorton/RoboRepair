@@ -32,11 +32,11 @@ class InvoiceDetailsController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','view', 'index'),
+				'actions'=>array('create','view', 'index'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete', 'update',),
 				'users'=>array('@'),
 				'expression'=>'isset($user->userGroup) && ($user->userGroup==="1")'
 			),

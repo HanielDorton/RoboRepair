@@ -38,7 +38,12 @@ class SiteController extends Controller
 
 
 	public function actionsalesreport() {
-		$this->render('salesreport');
+
+		if (Yii::app()->user->isGuest)
+        		$this->redirect(Yii::app()->createUrl('site/login'));
+        	else{
+			$this->render('salesreport');
+		}
 	}
 
 	/**
