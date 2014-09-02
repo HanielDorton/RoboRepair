@@ -22,6 +22,9 @@ $this->pageTitle=Yii::app()->name;
 	<li><a href = "'.Yii::app()->baseUrl.'?r=summarySales">Manage Daily Sales Summaries</a></li>
 	<li><a href = "'.Yii::app()->baseUrl.'?r=invoices">Manage Invoices</a></li>
 	<li><a href = "'.Yii::app()->baseUrl.'?r=invoiceDetails">Manage Invoice Details</a></li>
+	<li><a href = "'.Yii::app()->baseUrl.'?r=tblUser">Manage Users</a></li>
+	<li><a href = "'.Yii::app()->baseUrl.'?r=tblGroup">Manage Groups</a></li>
+	<li><a href = "'.Yii::app()->baseUrl.'?r=tblCompany">Manage Companies</a></li>
 
 </ul>'; }
 ?>

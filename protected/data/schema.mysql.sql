@@ -26,9 +26,8 @@ INSERT INTO tbl_group (groupName) VALUES ('Employees');
 
 INSERT INTO tbl_company (companyName) VALUES ('Robo Repair');
 
-INSERT INTO tbl_user (username, password, email, userGroup, userCompany) VALUES ('test1', 'pass1', 'test1@example.com', 1, 1);
 INSERT INTO tbl_user (username, password, email, userGroup, userCompany) VALUES ('emp1', 'pass2', 'test2@example.com',2, 1);
-INSERT INTO tbl_user (username, password, email, userGroup, userCompany) VALUES ('manager', 'pass3', 'test3@example.com', 1, 1);
+INSERT INTO tbl_user (username, password, email, userGroup, userCompany) VALUES ('manager', 'mysimple', 'test3@example.com', 1, 1);
 
 CREATE TABLE summary_sales(
     id INTEGER UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
