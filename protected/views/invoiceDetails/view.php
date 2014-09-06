@@ -10,10 +10,13 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List InvoiceDetails', 'url'=>array('index')),
 	array('label'=>'Create InvoiceDetails', 'url'=>array('create')),
-	array('label'=>'Update InvoiceDetails', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete InvoiceDetails', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage InvoiceDetails', 'url'=>array('admin')),
 );
+
+if (Yii::app()->user->userGroup == 1) {
+	array_push($this->menu, 	array('label'=>'Update InvoiceDetails', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete InvoiceDetails', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage InvoiceDetails', 'url'=>array('admin')));
+}
 ?>
 
 <h1>View InvoiceDetails #<?php echo $model->id; ?></h1>

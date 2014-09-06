@@ -1,0 +1,28 @@
+.invoice{
+border:double;
+width:80%;
+margin:0px auto;
+font-size:120%;
+}
+.InvoiceNumber{
+float:left;
+margin-bottom:5%;
+}
+.InvoiceDate{
+float:right;
+margin-bottom:5%;
+}
+.InvoiceDetails{
+clear:both;
+}
+.totalandsubmit{
+margin-left: 75%;
+margin-top:5%;
+margin-bottom:0;
+}
+.total{
+display:inline-block
+}
+input{
+margin-top: 2%;
+}

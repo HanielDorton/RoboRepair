@@ -9,8 +9,13 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Invoices', 'url'=>array('index')),
-	array('label'=>'Manage Invoices', 'url'=>array('admin')),
 );
+
+if (Yii::app()->user->userGroup == 1) {
+	array_push($this->menu, array('label'=>'Manage Invoices', 'url'=>array('admin')));
+}
+
+
 ?>
 
 <h1>Create Invoices</h1>

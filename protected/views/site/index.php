@@ -12,19 +12,20 @@ $this->pageTitle=Yii::app()->name;
 <p>Employee Options:</p>
 
 <ul>
-	<li><a href = "'.Yii::app()->baseUrl.'?r=invoices/create">Enter Invoices</a></li>
-	<li><a href = "'.Yii::app()->baseUrl.'?r=invoiceDetails/create">Enter Invoices Details</a></li>
+	<li><a href = "'.Yii::app()->baseUrl.'?r=/site/invoiceentry">Employee Invoice Entry</a></li>
 </ul>'; } else { echo '
 
 </p>Manager Options:</p>
 
 <ul>
+	<li><a href = "'.Yii::app()->baseUrl.'?r=/site/invoiceentry">Enter Invoices</a></li>
 	<li><a href = "'.Yii::app()->baseUrl.'?r=summarySales">Manage Daily Sales Summaries</a></li>
 	<li><a href = "'.Yii::app()->baseUrl.'?r=invoices">Manage Invoices</a></li>
 	<li><a href = "'.Yii::app()->baseUrl.'?r=invoiceDetails">Manage Invoice Details</a></li>
 	<li><a href = "'.Yii::app()->baseUrl.'?r=tblUser">Manage Users</a></li>
 	<li><a href = "'.Yii::app()->baseUrl.'?r=tblGroup">Manage Groups</a></li>
 	<li><a href = "'.Yii::app()->baseUrl.'?r=tblCompany">Manage Companies</a></li>
+
 
 </ul>'; }
 ?>

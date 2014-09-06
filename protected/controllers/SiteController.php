@@ -38,11 +38,69 @@ class SiteController extends Controller
 
 
 	public function actionsalesreport() {
-
 		if (Yii::app()->user->isGuest)
         		$this->redirect(Yii::app()->createUrl('site/login'));
         	else{
 			$this->render('salesreport');
+		}
+	}
+
+	public function actioninvoiceentry() {		
+
+		if (Yii::app()->user->isGuest)
+        		$this->redirect(Yii::app()->createUrl('site/login'));
+        	else{
+			$todaysDate = date("Y-m-d");
+			$nextInvoiceNumber = Yii::app()->db->createCommand()
+	  		->select('max(invoiceNumber) as max')
+	  		->from('invoices')
+	  		->queryScalar();
+			$nextInvoiceNumber += 1;
+
+			if(isset($_POST['productName1'])) {
+				$grandTotal = 0;					
+
+				$invoice = new Invoices;
+				$invoice->invoiceNumber = $nextInvoiceNumber;
+				$invoice->invoiceDate = $todaysDate;
+				$invoice->invoiceTotal = $_POST['productCost1'];
+				$invoice->save();
+				
+				for ($x=1; $x<=5; $x++) {
+					if(isset($_POST['productName' . $x])) {
+						$model=new InvoiceDetails;
+						$model->invoiceNumber = $nextInvoiceNumber;
+						$model->productName = $_POST['productName' . $x];
+						$model->productCost = $_POST['productCost' . $x];
+						$model->save();
+						$grandTotal += $_POST['productCost' . $x];
+					}
+				}
+				$invoice->invoiceTotal = $grandTotal;
+				$invoice->save();
+				
+				$criteria = new CDbCriteria();
+				$criteria->condition = 'salesDate=:salesDate';
+				$criteria->params = array(':salesDate'=>$todaysDate);
+				
+				$newSS=SummarySales::model()->find($criteria);
+
+				if (empty($newSS)) {				
+					$newSS=new SummarySales;
+					$newSS->salesDate = $todaysDate;
+					$newSS->salesTotal = $grandTotal;
+				}
+				else {
+					$newSS->salesTotal += $grandTotal;
+				}
+				$newSS->save();
+				$this->redirect(Yii::app()->createUrl('site/salesreport'));
+			}
+
+			$this->render('invoiceentry', array(
+			'todaysDate'=>$todaysDate,
+			'nextInvoiceNumber'=>$nextInvoiceNumber,
+		));
 		}
 	}
 

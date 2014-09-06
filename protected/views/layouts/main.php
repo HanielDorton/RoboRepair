@@ -50,8 +50,9 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by Robo Repair.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by <a href = "http://hanieldorton.github.io/"> Daniel Horton</a>.<br/>
 		All Rights Reserved.<br/>
+		Hosted on <a href = "http://freehostingnoads.net/">Free Hosting No Ads</a>.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 

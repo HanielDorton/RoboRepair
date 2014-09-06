@@ -23,12 +23,33 @@ foreach ($salesSummaries as $ss) {
 	$grandTotal += $ss->salesTotal;
 	$numSalesDays++;
 	echo "<ul class='salesLine'>";
-	echo "<li>$ss->salesDate</li>";
+	echo "<li class='summarysale'>$ss->salesDate</li>";
 	echo "<li>$".money_format('%i', $ss->salesTotal)."</li>";
+
+	//loop through invoices for the day
+	$invoices = Invoices::model()->findAllByAttributes(array('invoiceDate'=>$ss->salesDate));
+	foreach ($invoices as $inv) {
+		echo "<ul class='invoiceline'>";
+		echo "<li class='invoice'>$inv->invoiceNumber</li>";
+		echo "<li>$".money_format('%i', $inv->invoiceTotal)."</li>";
+
+		$invoicedetails = InvoiceDetails::model()->findAllByAttributes(array('invoiceNumber'=>$inv->invoiceNumber));	
+		foreach ($invoicedetails as $invdet) {
+			echo "<ul class='invoicedetailsline'>";
+			echo "<li>$invdet->productName</li>";
+			echo "<li>$".money_format('%i', $invdet->productCost)."</li>";
+			echo "</ul>";
+		}
+
+
+		echo "</ul>";
+	}
 	echo "</ul><hr>";
+	
 	}
 
 //then loop through the invoices for today if there are any and combine them to look like a sales summary (but they aren't)
+/*
 $todaysInvoices = Invoices::model()->findAllByAttributes(array('invoiceDate'=>date("Y-m-d")));
 if (sizeOf($todaysInvoices) > 0) {
 	$numSalesDays++;
@@ -42,6 +63,7 @@ if (sizeOf($todaysInvoices) > 0) {
 	echo "<li>$".money_format('%i', $dailyTotal)."</li>";
 	echo "</ul><hr>";
 }
+*/
 
 
 
@@ -56,4 +78,19 @@ echo "<p>Daily Average: <b>$".money_format('%i', $grandTotal/$numSalesDays)."</b
 ?>
 
 </div>
+
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready( function() { 
+	$('.invoiceline').hide();
+	$('.invoicedetailsline').hide();
+});
+$('.summarysale').on('click', function() {
+	$(this).parent().find('.invoiceline').toggle();
+});
+$('.invoice').on('click', function() {
+	$(this).parent().find('.invoicedetailsline').toggle();
+	//alert("clicked");	
+});
+</script>
 
